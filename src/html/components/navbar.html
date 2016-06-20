@@ -1,7 +1,9 @@
 {% from "../macros/menu-item.html" import menuItem %}
 
-<nav class="navbar pure-menu pure-menu-horizontal">
-  <ul class="pure-menu-list">
+<nav class="navbar pure-menu header-item">
+  <label for="navbar-showmenu" class="navbar-hamburger">x</label>
+  <input id="navbar-showmenu" class="navbar-checkbox" type="checkbox">
+  <ul class="navbar-list pure-menu-list pure-menu-horizontal">
     {{ menuItem("story", "History Patrycji", "is-current") }}
     {{ menuItem("examination", "Jak wygląda badanie") }}
     {{ menuItem("apply", "Gdzie się zgłosić") }}

@@ -1,16 +1,50 @@
 .navbar {
-  padding: 0 $columns-spacing;
+  position: relative;
+  width: 100%;
+
+  &-list {
+    // height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    @media screen and (min-width: $breakpoint-md) {
+      height: auto;
+    }
+  }
 
   &-link {
-    display: inline-block;
-    padding: $columns-spacing-sm 0;
-    margin-right: $columns-spacing-sm;
+    @media screen and (min-width: $breakpoint-md) {
+      display: inline-block;
+      margin-right: $columns-spacing-sm;
+      margin-left: $columns-spacing-sm;
+    }
   }
 
   &-item {
+    @media screen and (min-width: $breakpoint-md) {
+      display: inline-block;
+    }
+
     &.is-current .navbar-link {
       color: $color-secondary;
     }
+    
+    &:last-child {
+      .navbar-link {
+        margin-right: 0;
+      }
+    }
+  }
 
+  &-checkbox {
+    visibility: hidden;
+
+    &:checked {
+      &~.navbar-list {
+        height: auto;
+      }
+    }
   }
 }

@@ -2,4 +2,18 @@
   // position: fixed;
   // width: 100%;
   background: #fff;
+
+  &-wrapper {
+  padding: 0 $columns-spacing;
+	display: flex;
+  justify-content: space-between;
+
+    @media screen and (min-width: $breakpoint-lg) {
+      padding: 0 (2 * $columns-spacing);
+    }
+  }
+
+  &-item {
+    align-self: center;
+  }
 }
